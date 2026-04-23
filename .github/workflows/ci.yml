@@ -76,6 +76,8 @@ jobs:
         perl-version: ['5.8', '5.20', '5.30', '5.34']
         alien-install-type: [ 'system', 'share' ]
         include:
+          # Ubuntu 20.04 with cmake 3.x (older system) | system (cmake4 module must provide cmake v4)
+          - { perl-version: '5.34' , os: ubuntu-20.04   ,                    alien-install-type: 'system'                                  }
           # Windows strawberry     | share
           - { perl-version: '5.34' , os: windows-latest , dist: strawberry , alien-install-type: 'share'                                  }
           # Windows msys2          | system, share
