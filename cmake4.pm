@@ -1,23 +1,27 @@
 package Alien::cmake4;
 
+use base qw(Alien::Base);
 use strict;
 use warnings;
+
 use 5.008001;
-use base qw(Alien::Base);
+
+use Path::Tiny qw(path);
 
 our $VERSION = '0.01';
 
-sub exe {
-	my $class = shift;
-	$class->runtime_prop->{command};
-}
-
 sub alien_helper {
 	return {
-		cmake4 => sub {
+		'cmake4' => sub {
 			Alien::cmake4->exe;
 		},
 	};
+}
+
+sub exe {
+	my $class = shift;
+
+	return path($class->bin_dir, $class->runtime_prop->{'command'});
 }
 
 1;
@@ -40,22 +44,7 @@ From Perl:
  use Env qw(@PATH);
  
  unshift @PATH, Alien::cmake4->bin_dir;
- system 'cmake', ...;
-
-From L<alienfile>
-
- use alienfile;
- 
- share {
-   # Build::CMake plugin pulls in Alien::cmake4 automatically
-   plugin 'Build::CMake';
-   build [
-     # this is the default build step, if you do not specify one.
-     [ '%{cmake4}', -G => '%{cmake_generator}', '-DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=true', '-DCMAKE_INSTALL_PREFIX:PATH=%{.install.prefix}', '.' ],
-     '%{make}',
-     '%{make} install',
-   ];
- };
+ system Alien::cmake4->exe, ...;
 
 =head1 DESCRIPTION
 
@@ -131,14 +120,14 @@ C<share>, C<system> or C<default>.
 
 =item ALIEN_CMAKE_FROM_SOURCE
 
-If set to true, and if a share install is attempted, L<Alien::cmake3> will not try a
+If set to true, and if a share install is attempted, L<Alien::cmake4> will not try a
 binary share install (even if available), and instead a source share install.
 
 =back
 
 =head1 CAVEATS
 
-If you do not have a system C<cmake> version 3.x.x available, then a share install
+If you do not have a system C<cmake> version 4.x.x available, then a share install
 will be attempted.
 
 Binary share installs are attempted on platforms for which the latest version of C<cmake>
@@ -149,14 +138,14 @@ supported by the operating system vendor and supported by C<cmake>, so that shou
 be a problem.  If you are using an operating system not supported by its vendor
 Please Stop That, this is almost certainly a security vulnerability.
 
-That said if you really do need L<Alien::cmake3> on an unsupported system,
+That said if you really do need L<Alien::cmake4> on an unsupported system,
 you have some options:
 
 =over 4
 
 =item Install system version of C<cmake>
 
-If you can find an older version of C<cmake> 3.x.x that is supported by your operating
+If you can find an older version of C<cmake> 4.x.x that is supported by your operating
 system.
 
 =item Force a source code install
@@ -172,9 +161,11 @@ and if you can install a system version of C<cmake> it may work better.
 
 =head1 AUTHOR
 
-Author: Graham Ollis E<lt>plicease@cpan.orgE<gt>
+Author of Alien::cmake4: Michal Josef Špaček E<lt>skim@cpan.orgE<gt>
 
-Contributors:
+Author of Alien::cmake3: Graham Ollis E<lt>plicease@cpan.orgE<gt>
+
+Contributors of Alien::cmake3:
 
 Adriano Ferreira (FERREIRA)
 
@@ -183,6 +174,7 @@ Dagfinn Ilmari Mannsåker (ilmari)
 =head1 COPYRIGHT AND LICENSE
 
 This software is copyright (c) 2017-2024 by Graham Ollis.
+This software is copyright (c) 2026 by Michal Josef Špaček.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

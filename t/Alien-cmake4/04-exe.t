@@ -11,4 +11,4 @@ alien_ok('Alien::cmake4');
 ok(my $exe = Alien::cmake4->exe, 'exe');
 run_ok([$exe, '--version'])
     ->success
-    ->out_like(qr/^cmake\s+version\s+/);
+    ->out_like(qr/^cmake\s+version\s+4\.[\d\.]+/);
