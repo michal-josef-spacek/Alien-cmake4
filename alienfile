@@ -1,0 +1,8 @@
+use alienfile;
+
+plugin 'Probe::CommandLine' => (
+	command => 'cmake',
+	args => ['--version'],
+	match => qr/^cmake\s+version/,
+	version => qr/^cmake\s+version\s+(4\.[0-9\.]+)/,
+);
