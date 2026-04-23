@@ -7,10 +7,10 @@ on:
   pull_request:
 
 env:
-  PKG_NAME: DjVuLibre
-  PKG_UBUNTU: libdjvulibre-dev djvulibre-bin
-  PKG_HOMEBREW: djvulibre
-  PKG_MSYS2_MINGW64: mingw-w64-x86_64-djvulibre
+  PKG_NAME: CMake
+  PKG_UBUNTU: cmake
+  PKG_HOMEBREW: cmake
+  PKG_MSYS2_MINGW64: mingw-w64-x86_64-cmake
   PKG_MSYS2_MINGW64_DEPS: >-
     base-devel
     mingw-w64-x86_64-toolchain
