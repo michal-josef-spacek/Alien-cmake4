@@ -1,3 +1,5 @@
+0.04
+
 0.03 2026-04-27T19:17:10+02:00
  - Add check for minimal version of glibc for binary installation on Linux.
 
