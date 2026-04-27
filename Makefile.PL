@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
 		'Config' => 0,
 		'ExtUtils::MakeMaker' => '6.76',
 		'File::Spec' => 0,
+		'version' => 0,
 	},
 	'CONFIGURE_REQUIRES' => {
 		'Alien::Build::MM' => '0.32',
