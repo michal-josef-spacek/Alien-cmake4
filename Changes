@@ -1,4 +1,5 @@
 0.04
+ - Add missing build dependencies (explicitly for share build).
  - Fix configure section in Makefile.PL.
  - Remove Alien::Build::MM and Extutils::MakeMaker from build phase
    requirements.
