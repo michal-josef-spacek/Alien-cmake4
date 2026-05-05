@@ -8,9 +8,7 @@ my %WriteMakefileArgs = (
 	'ABSTRACT' => 'Find or download and install cmake4',
 	'AUTHOR' => "Michal Josef \x{160}pa\x{10d}ek <skim\@cpan.org>",
 	'BUILD_REQUIRES' => {
-		'Alien::Build::MM' => '0.32',
 		'Config' => 0,
-		'ExtUtils::MakeMaker' => '6.76',
 		'File::Spec' => 0,
 		'version' => 0,
 	},
