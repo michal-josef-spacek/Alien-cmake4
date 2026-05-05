@@ -1,7 +1,9 @@
 TODO
 ====
 1. Add SYNOPSIS section in doc with alienfile usage. Need to resolve compatibility with Build::CMake?
-2.
+2. CI and windows and Alien::unzip
+3. Add option for build without gui.
+4.
 
 Applied
 =======
