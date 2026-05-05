@@ -31,6 +31,7 @@ my %WriteMakefileArgs = (
 	},
 	'DISTNAME' => 'Alien-cmake4',
 	'LICENSE' => 'perl',
+	'MIN_PERL_VERSION' => '5.008001',
 	'META_MERGE' => {
 		'resources' => {
 			'bugtracker' => 'https://github.com/michal-josef-spacek/Alien-cmake4/issues',
