@@ -8,7 +8,7 @@ use 5.008001;
 
 use Path::Tiny qw(path);
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 sub alien_helper {
 	return {
