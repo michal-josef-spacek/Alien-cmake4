@@ -14,7 +14,7 @@ my %WriteMakefileArgs = (
 	},
 	'CONFIGURE_REQUIRES' => {
 		'Alien::Build::MM' => '0.32',
-		'Alien::Build::Plugin::Build::Make' => 0,
+		'Alien::Build::Plugin::Build::Autoconf' => 0,
 		'Alien::Build::Plugin::Probe::CommandLine' => 0,
 		'ExtUtils::MakeMaker' => '6.76',
 	},

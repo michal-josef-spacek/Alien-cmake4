@@ -1,4 +1,5 @@
 0.04
+ - Fix configure section in Makefile.PL.
  - Remove Alien::Build::MM and Extutils::MakeMaker from build phase
    requirements.
  - Rewrite from base to parent.
