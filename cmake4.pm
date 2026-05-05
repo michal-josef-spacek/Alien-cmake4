@@ -1,6 +1,6 @@
 package Alien::cmake4;
 
-use base qw(Alien::Base);
+use parent qw(Alien::Base);
 use strict;
 use warnings;
 
