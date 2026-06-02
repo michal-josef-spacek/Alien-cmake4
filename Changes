@@ -1,5 +1,6 @@
 0.05
  - Fix copyright in LICENSE.
+ - Fix FSF address in LICENSE (GH#2).
 
 0.04 2026-05-05T17:30:25+02:00
  - Add minimal version of Perl for my code (not Mojo::DOM).
